@@ -2,9 +2,8 @@
 #include "string.h"
 #include <stdio.h>
 
-void make_graph_path(char _cmd[], uint8_t new_value)
+void make_graph_path(char _cmd[], uint8_t* arr_values)
 {
-    static uint8_t arr_persentage[X_RANGE] = {0};
     static const uint8_t arr_x[X_RANGE] = {
     0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
     10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
@@ -21,13 +20,10 @@ void make_graph_path(char _cmd[], uint8_t new_value)
     char cmd[SIZE_CMD];
     char l_cmd[SIZE_LINE + 1];
 
-    memmove(arr_persentage, arr_persentage + 1, X_RANGE - 1);
-    arr_persentage[X_RANGE - 1] = new_value;
-
     memset(cmd, ' ', SIZE_CMD - 1);
     for(int i = 0; i < X_RANGE; i++)
     {
-        snprintf(l_cmd, SIZE_LINE + 1, " L %u %d   ", arr_x[i], (uint8_t)(100 - arr_persentage[i]));
+        snprintf(l_cmd, SIZE_LINE + 1, " L %u %d   ", arr_x[i], (uint8_t)(100 - arr_values[i]));
         strncpy(cmd + (SIZE_LINE * i), l_cmd, SIZE_LINE);
     }
     cmd[SIZE_CMD - 1] = '\000';

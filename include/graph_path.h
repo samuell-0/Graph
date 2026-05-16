@@ -8,7 +8,7 @@ extern "C"
 
 #include <stdint.h>
 
-void make_graph_path(char arr[], uint8_t new_value);
+void make_graph_path(char arr[], uint8_t* arr_values);
 
 #ifdef __cplusplus
 }

@@ -11,12 +11,12 @@ int main()
     // printf("original length: %d\n", strlen(cmd));
     // printf("%s: end here\n", cmd);
 
-    for (int i = 4; i < 100; i++)
-    {
-        make_graph_path(cmd, i);
-        printf("%s: >done\n", cmd);
+    // for (int i = 4; i < 100; i++)
+    // {
+    //     make_graph_path(cmd, i);
+    //     printf("%s: >done\n", cmd);
 
-    }
+    // }
 
     // printf("length: %d\n", strlen(cmd));
     // printf("%s: end here\n", cmd);
